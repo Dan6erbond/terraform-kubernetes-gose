@@ -5,6 +5,11 @@ name: default
 steps:
   - name: standard-version
     image: node:19
+    environment:
+      GIT_USERNAME:
+        from_secret: git_username
+      GIT_TOKEN:
+        from_secret: git_token
     commands:
       - git config --global user.email "moravrav@gmail.com"
       - git config --global user.name "RaviAnand Mohabir"
